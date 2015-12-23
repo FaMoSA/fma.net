@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and mandatory="true" name="FraSCAti">
+				<feature name="Explorer"/>
+				<and mandatory="true" name="ScaParser">
+					<and mandatory="true" name="Metamodels">
+						<feature name="MM_Native"/>
+						<feature name="MM_FraSCAti"/>
+						<feature name="MM_Tuscany"/>
+						<feature name="MM_UPnP"/>
+						<feature mandatory="true" name="MM_SCA"/>
+					</and>
+				</and>
+				<feature name="RemoteManagement"/>
+				<feature name="Fscript"/>
+				<feature name="BindingFactory"/>
+				<and mandatory="true" name="ComponentFactory">
+					<and mandatory="true" name="MembraneFactories">
+						<feature name="MF_Julia"/>
+						<feature name="MF_OSGi"/>
+						<feature mandatory="true" name="MF_Tinfi"/>
+					</and>
+					<and name="MembraneGeneration">
+						<alt name="JavaCompilers">
+							<feature mandatory="true" name="JDT"/>
+							<feature mandatory="true" name="JDK6"/>
+						</alt>
+						<and mandatory="true" name="MembraneGenerators">
+							<feature name="MG_Tinfi"/>
+							<feature name="MG_OSGi"/>
+						</and>
+					</and>
+				</and>
+				<feature name="JMX"/>
+				<and mandatory="true" name="AssemblyFactory">
+					<and mandatory="true" name="PropertyTypes">
+						<feature name="Property_JAXB"/>
+						<feature mandatory="true" name="Property_Java"/>
+						<feature mandatory="true" name="Property_XSD"/>
+					</and>
+					<and mandatory="true" name="Interfaces">
+						<feature name="Interface_Native"/>
+						<feature name="Interface_WSDL"/>
+						<feature mandatory="true" name="Interface_Java"/>
+					</and>
+					<and mandatory="true" name="Bindings">
+						<feature name="Binding_WS"/>
+						<feature name="Binding_UPnP"/>
+						<feature name="Binding_JSON_RPC"/>
+						<feature name="Binding_REST"/>
+						<feature mandatory="true" name="Binding_SCA"/>
+						<feature name="Binding_JavaRMI"/>
+						<feature name="Binding_HTTP"/>
+						<feature name="Binding_JNA"/>
+						<feature name="Binding_JMS"/>
+					</and>
+					<and mandatory="true" name="Implementations">
+						<and name="Implementation_Script">
+							<feature name="JRuby"/>
+							<feature name="BeanShell"/>
+							<feature name="Jython"/>
+							<feature name="Groovy"/>
+							<feature name="JavaScript"/>
+							<feature name="Xquery"/>
+							<feature name="FScript"/>
+						</and>
+						<feature name="Implementation_Fractal"/>
+						<feature name="Implementation_Resource"/>
+						<alt name="Implementation_OSGi">
+							<feature mandatory="true" name="Apache_Felix"/>
+							<feature mandatory="true" name="Knopflerfish"/>
+							<feature mandatory="true" name="Equinox"/>
+						</alt>
+						<feature mandatory="true" name="Implementation_Composite"/>
+						<feature name="Implementation_BPEL"/>
+						<feature name="Implementation_Spring"/>
+						<feature mandatory="true" name="Implementation_Java"/>
+					</and>
+				</and>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_JSON_RPC</var>
+					</not>
+					<var>MM_FraSCAti</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_BPEL</var>
+					</not>
+					<var>Interface_WSDL</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Fscript</var>
+					</not>
+					<var>AssemblyFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_WS</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_JavaRMI</var>
+					</not>
+					<var>MM_FraSCAti</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_JavaRMI</var>
+					</not>
+					<var>BindingFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Explorer</var>
+					</not>
+					<var>BindingFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_SCA</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>RemoteManagement</var>
+					</not>
+					<var>AssemblyFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_UPnP</var>
+					</not>
+					<var>MM_UPnP</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_REST</var>
+					</not>
+					<var>BindingFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_Composite</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Explorer</var>
+					</not>
+					<var>Implementation_Fractal</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_HTTP</var>
+					</not>
+					<var>MM_Tuscany</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<var>Fscript</var>
+					<not>
+						<var>FScript</var>
+					</not>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_Script</var>
+					</not>
+					<var>MM_FraSCAti</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_Spring</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Fscript</var>
+					</not>
+					<var>Implementation_Fractal</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>MF_OSGi</var>
+					</not>
+					<var>MG_OSGi</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_Java</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Explorer</var>
+					</not>
+					<var>AssemblyFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_OSGi</var>
+					</not>
+					<var>MM_FraSCAti</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>RemoteManagement</var>
+					</not>
+					<var>Binding_REST</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_WS</var>
+					</not>
+					<var>BindingFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>AssemblyFactory</var>
+					</not>
+					<var>ComponentFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_JNA</var>
+					</not>
+					<var>MM_Native</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_REST</var>
+					</not>
+					<var>MM_FraSCAti</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Interface_WSDL</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>MF_OSGi</var>
+					</not>
+					<var>Implementation_OSGi</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>JMX</var>
+					</not>
+					<var>AssemblyFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>MG_OSGi</var>
+					</not>
+					<var>MF_OSGi</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>AssemblyFactory</var>
+					</not>
+					<var>ScaParser</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>RemoteManagement</var>
+					</not>
+					<var>Fscript</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_JMS</var>
+					</not>
+					<var>BindingFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_OSGi</var>
+					</not>
+					<var>MF_OSGi</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_Resource</var>
+					</not>
+					<var>MM_Tuscany</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_JMS</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Fscript</var>
+					</not>
+					<var>BindingFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_JSON_RPC</var>
+					</not>
+					<var>BindingFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_OSGi</var>
+					</not>
+					<var>MG_OSGi</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_BPEL</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Binding_UPnP</var>
+					</not>
+					<var>BindingFactory</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Interface_Java</var>
+					</not>
+					<var>MM_SCA</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Interface_Native</var>
+					</not>
+					<var>MM_Native</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>Implementation_Fractal</var>
+					</not>
+					<var>MM_FraSCAti</var>
+				</disj>
+			</rule>
+			<rule>
+				<disj>
+					<not>
+						<var>MG_OSGi</var>
+					</not>
+					<var>Implementation_OSGi</var>
+				</disj>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

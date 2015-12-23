@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and mandatory="true" name="Core">
+				<and mandatory="true" name="Persistence">
+					<and name="Transactions">
+						<feature name="Distributedtransactions"/>
+					</and>
+					<alt name="Lookuptables">
+						<feature mandatory="true" name="Newdata"/>
+						<and mandatory="true" name="Existingdata">
+							<feature name="Dataconversion"/>
+						</and>
+					</alt>
+					<and mandatory="true" name="Relationaldatabase">
+						<or abstract="true" mandatory="true" name="Relationaldatabase_1">
+							<feature mandatory="true" name="Existingdataschema"/>
+							<feature mandatory="true" name="Newdataschema"/>
+						</or>
+						<or abstract="true" mandatory="true" name="Relationaldatabase_2">
+							<feature mandatory="true" name="CustomerprovidedRDBMS"/>
+							<and mandatory="true" name="SelfprovidedRDBMS">
+								<feature mandatory="true" name="HSQLDB"/>
+							</and>
+						</or>
+					</and>
+					<feature mandatory="true" name="Hibernate"/>
+				</and>
+				<and mandatory="true" name="Pageflows">
+					<feature mandatory="true" name="SpringWebFlow"/>
+				</and>
+				<and mandatory="true" name="Presentation">
+					<alt abstract="true" mandatory="true" name="Presentation_1">
+						<feature mandatory="true" name="Existingdesign"/>
+						<and mandatory="true" name="Newdesign">
+							<feature mandatory="true" name="Thirdpartywebdesigner"/>
+						</and>
+					</alt>
+					<or mandatory="true" name="AJAX">
+						<feature mandatory="true" name="JQuery"/>
+						<feature mandatory="true" name="YQL"/>
+					</or>
+					<feature mandatory="true" name="GoogleWebToolkit"/>
+				</and>
+				<and mandatory="true" name="Businesslogic">
+					<and name="Businessrules">
+						<feature mandatory="true" name="Droolsrulesengine"/>
+					</and>
+					<feature name="Customlogic"/>
+				</and>
+				<and mandatory="true" name="Datamodel">
+					<and name="Automatictransformationsbetweenlayers">
+						<and mandatory="true" name="JSONrepresentation">
+							<and mandatory="true" name="JSONtoJavaconversions">
+								<feature mandatory="true" name="json_lib"/>
+							</and>
+						</and>
+						<feature mandatory="true" name="JPAbeans"/>
+						<feature mandatory="true" name="NakedObjectspattern"/>
+					</and>
+					<feature name="Manualtransformationsbetweenlayers"/>
+				</and>
+				<and name="Messaging">
+					<or abstract="true" mandatory="true" name="Messaging_1">
+						<feature mandatory="true" name="Existingmessagingsystem"/>
+						<and mandatory="true" name="Newmessagingsystem">
+							<feature mandatory="true" name="ApacheMQ"/>
+						</and>
+					</or>
+					<feature mandatory="true" name="JMS"/>
+				</and>
+				<and name="Email">
+					<feature name="Bulkemail"/>
+				</and>
+				<and name="Security">
+					<alt mandatory="true" name="Identitymanagement">
+						<feature mandatory="true" name="Existing"/>
+						<feature mandatory="true" name="New"/>
+					</alt>
+					<feature name="Datasecurity"/>
+					<feature name="Transactionsecurity"/>
+				</and>
+				<and name="Dataprocessing">
+					<alt name="XML">
+						<feature mandatory="true" name="SAXParser"/>
+						<feature mandatory="true" name="DOMParser"/>
+					</alt>
+					<feature name="Text"/>
+					<feature name="Relationaldata"/>
+					<and name="Bulkprocessing">
+						<feature mandatory="true" name="Springbatch"/>
+					</and>
+				</and>
+				<alt name="Integrationwithexistingsystems">
+					<feature mandatory="true" name="Opensystem"/>
+					<feature mandatory="true" name="Closedsystem"/>
+				</alt>
+				<alt name="Hosting">
+					<feature mandatory="true" name="Internalhostingatcustomer"/>
+					<and mandatory="true" name="Externalhostingathostingprovider">
+						<feature mandatory="true" name="Tomcat"/>
+					</and>
+				</alt>
+				<feature name="Usersessions"/>
+				<and name="Highavailability">
+					<feature mandatory="true" name="Loadbalancing"/>
+					<feature mandatory="true" name="Clustering"/>
+					<feature name="Sessionreplication"/>
+				</and>
+				<and name="Performancecritical">
+					<feature mandatory="true" name="Performancetesting"/>
+				</and>
+				<alt name="Businesscontinuity">
+					<feature mandatory="true" name="Legalrequirement"/>
+					<feature mandatory="true" name="Businessrequirement"/>
+				</alt>
+				<feature name="Onlinepayments"/>
+				<feature mandatory="true" name="Springframework"/>
+			</and>
+		</struct>
+		<constraints/>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

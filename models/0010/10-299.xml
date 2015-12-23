@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<or abstract="true" mandatory="true" name="A1">
+				<and abstract="true" mandatory="true" name="A2">
+					<feature mandatory="true" name="C3"/>
+					<feature mandatory="true" name="C4"/>
+					<alt abstract="true" name="A5">
+						<feature mandatory="true" name="C10"/>
+					</alt>
+					<feature name="C6"/>
+					<feature name="C7"/>
+					<feature mandatory="true" name="C8"/>
+					<feature mandatory="true" name="C9"/>
+				</and>
+			</or>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<imp>
+						<conj>
+							<var>C4</var>
+							<var>A5</var>
+						</conj>
+						<not>
+							<var>A5</var>
+						</not>
+					</imp>
+					<var>C8</var>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

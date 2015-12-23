@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="A1">
+				<alt abstract="true" mandatory="true" name="A2">
+					<feature mandatory="true" name="C7"/>
+					<feature mandatory="true" name="C8"/>
+				</alt>
+				<alt abstract="true" name="A3">
+					<feature mandatory="true" name="C18"/>
+					<feature mandatory="true" name="C19"/>
+					<feature mandatory="true" name="C20"/>
+				</alt>
+				<or abstract="true" name="A4">
+					<feature mandatory="true" name="C9"/>
+					<feature mandatory="true" name="C10"/>
+					<or abstract="true" mandatory="true" name="A11">
+						<feature mandatory="true" name="C16"/>
+						<feature mandatory="true" name="C17"/>
+					</or>
+				</or>
+				<feature name="C5"/>
+				<and abstract="true" name="A6">
+					<feature mandatory="true" name="C12"/>
+					<feature mandatory="true" name="C13"/>
+					<feature mandatory="true" name="C14"/>
+					<feature name="C15"/>
+				</and>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<conj>
+					<var>C5</var>
+					<var>C18</var>
+				</conj>
+			</rule>
+			<rule>
+				<imp>
+					<not>
+						<var>A2</var>
+					</not>
+					<var>C16</var>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

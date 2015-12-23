@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="A1">
+				<and abstract="true" mandatory="true" name="A2">
+					<or abstract="true" mandatory="true" name="A11">
+						<feature mandatory="true" name="C47"/>
+						<feature mandatory="true" name="C48"/>
+						<feature mandatory="true" name="C49"/>
+						<feature mandatory="true" name="C50"/>
+					</or>
+					<feature mandatory="true" name="C12"/>
+				</and>
+				<feature mandatory="true" name="C3"/>
+				<or abstract="true" name="A4">
+					<feature mandatory="true" name="C13"/>
+					<feature mandatory="true" name="C14"/>
+					<feature mandatory="true" name="C15"/>
+					<feature mandatory="true" name="C16"/>
+					<feature mandatory="true" name="C17"/>
+					<and abstract="true" mandatory="true" name="A18">
+						<or abstract="true" mandatory="true" name="A35">
+							<feature mandatory="true" name="C38"/>
+							<feature mandatory="true" name="C39"/>
+							<feature mandatory="true" name="C40"/>
+							<feature mandatory="true" name="C41"/>
+							<feature mandatory="true" name="C42"/>
+							<feature mandatory="true" name="C43"/>
+							<feature mandatory="true" name="C44"/>
+							<feature mandatory="true" name="C45"/>
+							<feature mandatory="true" name="C46"/>
+						</or>
+						<feature mandatory="true" name="C36"/>
+						<feature name="C37"/>
+					</and>
+					<feature mandatory="true" name="C19"/>
+					<feature mandatory="true" name="C20"/>
+					<or abstract="true" mandatory="true" name="A21">
+						<feature mandatory="true" name="C26"/>
+						<feature mandatory="true" name="C27"/>
+						<and abstract="true" mandatory="true" name="A28">
+							<feature mandatory="true" name="C32"/>
+							<feature mandatory="true" name="C33"/>
+							<feature name="C34"/>
+						</and>
+						<feature mandatory="true" name="C29"/>
+						<feature mandatory="true" name="C30"/>
+						<feature mandatory="true" name="C31"/>
+					</or>
+					<feature mandatory="true" name="C22"/>
+				</or>
+				<feature name="C5"/>
+				<feature mandatory="true" name="C6"/>
+				<or abstract="true" name="A7">
+					<feature mandatory="true" name="C23"/>
+					<feature mandatory="true" name="C24"/>
+					<feature mandatory="true" name="C25"/>
+				</or>
+				<feature mandatory="true" name="C8"/>
+				<feature name="C9"/>
+				<feature mandatory="true" name="C10"/>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<disj>
+					<imp>
+						<disj>
+							<not>
+								<var>C16</var>
+							</not>
+							<not>
+								<var>A7</var>
+							</not>
+						</disj>
+						<not>
+							<var>C40</var>
+						</not>
+					</imp>
+					<var>C27</var>
+				</disj>
+			</rule>
+			<rule>
+				<not>
+					<imp>
+						<not>
+							<conj>
+								<disj>
+									<not>
+										<var>C16</var>
+									</not>
+									<not>
+										<var>C25</var>
+									</not>
+								</disj>
+								<var>C12</var>
+							</conj>
+						</not>
+						<not>
+							<var>C16</var>
+						</not>
+					</imp>
+				</not>
+			</rule>
+			<rule>
+				<conj>
+					<disj>
+						<imp>
+							<imp>
+								<not>
+									<var>C24</var>
+								</not>
+								<not>
+									<var>C43</var>
+								</not>
+							</imp>
+							<not>
+								<var>C13</var>
+							</not>
+						</imp>
+						<var>C36</var>
+					</disj>
+					<var>C10</var>
+				</conj>
+			</rule>
+			<rule>
+				<imp>
+					<eq>
+						<imp>
+							<not>
+								<var>C14</var>
+							</not>
+							<var>C17</var>
+						</imp>
+						<var>A18</var>
+					</eq>
+					<var>C31</var>
+				</imp>
+			</rule>
+			<rule>
+				<conj>
+					<eq>
+						<not>
+							<imp>
+								<not>
+									<var>C23</var>
+								</not>
+								<var>C26</var>
+							</imp>
+						</not>
+						<var>A2</var>
+					</eq>
+					<var>C31</var>
+				</conj>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

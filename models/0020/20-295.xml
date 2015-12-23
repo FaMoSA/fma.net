@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and abstract="true" mandatory="true" name="A1">
+				<or abstract="true" mandatory="true" name="A2">
+					<feature mandatory="true" name="C9"/>
+					<feature mandatory="true" name="C10"/>
+					<feature mandatory="true" name="C11"/>
+					<feature mandatory="true" name="C12"/>
+					<feature mandatory="true" name="C13"/>
+					<feature mandatory="true" name="C14"/>
+				</or>
+				<feature mandatory="true" name="C3"/>
+				<feature mandatory="true" name="C4"/>
+				<and abstract="true" mandatory="true" name="A5">
+					<feature mandatory="true" name="C15"/>
+					<feature mandatory="true" name="C16"/>
+					<feature mandatory="true" name="C17"/>
+					<feature mandatory="true" name="C18"/>
+					<feature name="C19"/>
+					<feature name="C20"/>
+				</and>
+				<feature mandatory="true" name="C6"/>
+				<feature name="C7"/>
+				<feature mandatory="true" name="C8"/>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<disj>
+					<not>
+						<conj>
+							<var>C7</var>
+							<not>
+								<var>C14</var>
+							</not>
+						</conj>
+					</not>
+					<var>C14</var>
+				</disj>
+			</rule>
+			<rule>
+				<eq>
+					<conj>
+						<eq>
+							<disj>
+								<not>
+									<var>C13</var>
+								</not>
+								<not>
+									<var>C6</var>
+								</not>
+							</disj>
+							<not>
+								<var>A2</var>
+							</not>
+						</eq>
+						<not>
+							<var>C19</var>
+						</not>
+					</conj>
+					<var>C3</var>
+				</eq>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

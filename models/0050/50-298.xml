@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<or abstract="true" mandatory="true" name="A1">
+				<or abstract="true" mandatory="true" name="A2">
+					<feature mandatory="true" name="C5"/>
+					<or abstract="true" mandatory="true" name="A6">
+						<feature mandatory="true" name="C35"/>
+						<feature mandatory="true" name="C36"/>
+						<feature mandatory="true" name="C37"/>
+						<feature mandatory="true" name="C38"/>
+						<feature mandatory="true" name="C39"/>
+						<and abstract="true" mandatory="true" name="A40">
+							<feature mandatory="true" name="C43"/>
+							<feature name="C44"/>
+							<feature mandatory="true" name="C45"/>
+							<feature name="C46"/>
+							<feature name="C47"/>
+						</and>
+						<and abstract="true" mandatory="true" name="A41">
+							<feature mandatory="true" name="C48"/>
+							<feature name="C49"/>
+							<feature mandatory="true" name="C50"/>
+						</and>
+						<feature mandatory="true" name="C42"/>
+					</or>
+					<feature mandatory="true" name="C7"/>
+					<and abstract="true" mandatory="true" name="A8">
+						<feature mandatory="true" name="C27"/>
+						<feature mandatory="true" name="C28"/>
+					</and>
+					<feature mandatory="true" name="C9"/>
+					<and abstract="true" mandatory="true" name="A10">
+						<feature mandatory="true" name="C11"/>
+						<feature name="C12"/>
+						<or abstract="true" name="A13">
+							<feature mandatory="true" name="C16"/>
+							<feature mandatory="true" name="C17"/>
+							<feature mandatory="true" name="C18"/>
+						</or>
+						<feature name="C14"/>
+						<feature mandatory="true" name="C15"/>
+					</and>
+				</or>
+				<alt abstract="true" mandatory="true" name="A3">
+					<feature mandatory="true" name="C19"/>
+					<alt abstract="true" mandatory="true" name="A20">
+						<feature mandatory="true" name="C29"/>
+						<feature mandatory="true" name="C30"/>
+						<feature mandatory="true" name="C31"/>
+						<feature mandatory="true" name="C32"/>
+					</alt>
+					<feature mandatory="true" name="C21"/>
+					<feature mandatory="true" name="C22"/>
+					<feature mandatory="true" name="C23"/>
+					<feature mandatory="true" name="C24"/>
+					<feature mandatory="true" name="C25"/>
+					<feature mandatory="true" name="C26"/>
+				</alt>
+				<or abstract="true" mandatory="true" name="A4">
+					<feature mandatory="true" name="C33"/>
+					<feature mandatory="true" name="C34"/>
+				</or>
+			</or>
+		</struct>
+		<constraints>
+			<rule>
+				<eq>
+					<imp>
+						<not>
+							<imp>
+								<not>
+									<var>A40</var>
+								</not>
+								<not>
+									<var>C42</var>
+								</not>
+							</imp>
+						</not>
+						<var>C9</var>
+					</imp>
+					<var>C42</var>
+				</eq>
+			</rule>
+			<rule>
+				<imp>
+					<conj>
+						<not>
+							<conj>
+								<not>
+									<var>C23</var>
+								</not>
+								<not>
+									<var>C16</var>
+								</not>
+							</conj>
+						</not>
+						<not>
+							<var>C21</var>
+						</not>
+					</conj>
+					<var>A8</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<imp>
+						<eq>
+							<var>C37</var>
+							<var>C12</var>
+						</eq>
+						<not>
+							<var>C35</var>
+						</not>
+					</imp>
+					<not>
+						<var>C36</var>
+					</not>
+				</imp>
+			</rule>
+			<rule>
+				<conj>
+					<eq>
+						<not>
+							<disj>
+								<not>
+									<var>C30</var>
+								</not>
+								<var>C33</var>
+							</disj>
+						</not>
+						<var>C22</var>
+					</eq>
+					<not>
+						<var>C15</var>
+					</not>
+				</conj>
+			</rule>
+			<rule>
+				<not>
+					<disj>
+						<not>
+							<eq>
+								<var>C11</var>
+								<eq>
+									<var>C42</var>
+									<not>
+										<var>C43</var>
+									</not>
+								</eq>
+							</eq>
+						</not>
+						<not>
+							<var>C5</var>
+						</not>
+					</disj>
+				</not>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

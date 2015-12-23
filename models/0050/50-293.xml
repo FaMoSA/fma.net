@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<alt abstract="true" mandatory="true" name="A1">
+				<feature mandatory="true" name="C2"/>
+				<feature mandatory="true" name="C3"/>
+				<alt abstract="true" mandatory="true" name="A4">
+					<and abstract="true" mandatory="true" name="A5">
+						<feature mandatory="true" name="C40"/>
+						<feature name="C41"/>
+					</and>
+					<feature mandatory="true" name="C6"/>
+					<feature mandatory="true" name="C7"/>
+					<feature mandatory="true" name="C8"/>
+					<and abstract="true" mandatory="true" name="A9">
+						<and abstract="true" mandatory="true" name="A14">
+							<alt abstract="true" mandatory="true" name="A19">
+								<feature mandatory="true" name="C25"/>
+								<feature mandatory="true" name="C26"/>
+								<feature mandatory="true" name="C27"/>
+								<feature mandatory="true" name="C28"/>
+								<or abstract="true" mandatory="true" name="A29">
+									<feature mandatory="true" name="C30"/>
+									<or abstract="true" mandatory="true" name="A31">
+										<feature mandatory="true" name="C39"/>
+									</or>
+									<feature mandatory="true" name="C32"/>
+									<feature mandatory="true" name="C33"/>
+									<feature mandatory="true" name="C34"/>
+									<alt abstract="true" mandatory="true" name="A35">
+										<and abstract="true" mandatory="true" name="A47">
+											<feature mandatory="true" name="C48"/>
+											<feature name="C49"/>
+											<feature name="C50"/>
+										</and>
+									</alt>
+									<feature mandatory="true" name="C36"/>
+									<feature mandatory="true" name="C37"/>
+									<feature mandatory="true" name="C38"/>
+								</or>
+							</alt>
+							<feature name="C20"/>
+							<feature name="C21"/>
+							<feature mandatory="true" name="C22"/>
+							<feature name="C23"/>
+						</and>
+						<feature mandatory="true" name="C15"/>
+						<feature mandatory="true" name="C16"/>
+						<feature mandatory="true" name="C17"/>
+						<and abstract="true" mandatory="true" name="A18">
+							<or abstract="true" mandatory="true" name="A24">
+								<feature mandatory="true" name="C42"/>
+								<feature mandatory="true" name="C43"/>
+								<feature mandatory="true" name="C44"/>
+								<feature mandatory="true" name="C45"/>
+								<feature mandatory="true" name="C46"/>
+							</or>
+						</and>
+					</and>
+					<feature mandatory="true" name="C10"/>
+					<and abstract="true" mandatory="true" name="A11">
+						<feature mandatory="true" name="C12"/>
+						<feature name="C13"/>
+					</and>
+				</alt>
+			</alt>
+		</struct>
+		<constraints>
+			<rule>
+				<eq>
+					<not>
+						<imp>
+							<disj>
+								<var>C26</var>
+								<var>A35</var>
+							</disj>
+							<var>C46</var>
+						</imp>
+					</not>
+					<eq>
+						<not>
+							<var>A24</var>
+						</not>
+						<not>
+							<var>C13</var>
+						</not>
+					</eq>
+				</eq>
+			</rule>
+			<rule>
+				<disj>
+					<var>C34</var>
+					<not>
+						<var>C39</var>
+					</not>
+				</disj>
+			</rule>
+			<rule>
+				<imp>
+					<disj>
+						<not>
+							<var>A19</var>
+						</not>
+						<var>C42</var>
+					</disj>
+					<var>A1</var>
+				</imp>
+			</rule>
+			<rule>
+				<disj>
+					<eq>
+						<var>C46</var>
+						<var>A1</var>
+					</eq>
+					<var>A5</var>
+				</disj>
+			</rule>
+			<rule>
+				<eq>
+					<imp>
+						<imp>
+							<imp>
+								<var>A14</var>
+								<not>
+									<var>C49</var>
+								</not>
+							</imp>
+							<not>
+								<var>C23</var>
+							</not>
+						</imp>
+						<not>
+							<var>C48</var>
+						</not>
+					</imp>
+					<var>C49</var>
+				</eq>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>

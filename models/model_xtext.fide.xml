@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel chosenLayoutAlgorithm="1">
+		<struct>
+			<and mandatory="true" name="xtext">
+				<feature mandatory="true" name="Grammar"/>
+				<feature mandatory="true" name="EMFmodel"/>
+				<feature mandatory="true" name="SemanticModel"/>
+				<and mandatory="true" name="Editor">
+					<feature mandatory="true" name="Id"/>
+					<feature mandatory="true" name="Name"/>
+					<feature name="Icon"/>
+					<feature name="extensions"/>
+					<feature name="class"/>
+					<feature name="command"/>
+					<feature name="launcher"/>
+					<feature name="contributorClass"/>
+					<feature name="default"/>
+					<feature name="filenames"/>
+					<feature name="symbolicFontName"/>
+					<feature name="matchingStrategy"/>
+					<and name="contentTypeBinding">
+						<feature mandatory="true" name="contentTypeId"/>
+					</and>
+				</and>
+				<and name="Handlers">
+					<and name="handler">
+						<feature mandatory="true" name="commandId"/>
+						<feature name="class_1"/>
+						<feature name="helpContextId"/>
+					</and>
+				</and>
+				<and name="PreferencePages">
+					<feature name="id"/>
+					<feature name="name"/>
+					<and name="page">
+						<feature mandatory="true" name="id_1"/>
+						<feature mandatory="true" name="name_1"/>
+						<feature mandatory="true" name="class_2"/>
+						<feature name="category"/>
+					</and>
+				</and>
+				<and name="Keywords">
+					<feature name="id_2"/>
+					<feature name="label"/>
+					<and name="keyword">
+						<feature mandatory="true" name="id_3"/>
+						<feature mandatory="true" name="label_1"/>
+					</and>
+				</and>
+				<and name="Commands">
+					<feature name="id_4"/>
+					<feature name="name_2"/>
+					<and name="category_1">
+						<feature mandatory="true" name="id_5"/>
+						<feature mandatory="true" name="name_3"/>
+						<feature name="description"/>
+					</and>
+					<and name="command_1">
+						<feature mandatory="true" name="id_6"/>
+						<feature mandatory="true" name="name_4"/>
+						<feature name="description_1"/>
+						<feature name="categoryId"/>
+						<feature name="defaultHandler"/>
+						<feature name="returnTypeId"/>
+						<feature name="helpContextId_1"/>
+						<and name="commandParameter">
+							<and name="values">
+								<feature mandatory="true" name="class_3"/>
+								<and name="parameter">
+									<feature mandatory="true" name="name_5"/>
+									<feature mandatory="true" name="value"/>
+								</and>
+							</and>
+							<feature mandatory="true" name="id_7"/>
+							<feature mandatory="true" name="name_6"/>
+							<feature name="typeId"/>
+						</and>
+						<and name="state">
+							<feature mandatory="true" name="id_8"/>
+							<and name="class_4">
+								<and mandatory="true" name="class_5">
+									<and name="parameter_1">
+										<feature mandatory="true" name="name_7"/>
+										<feature mandatory="true" name="value_1"/>
+									</and>
+								</and>
+							</and>
+						</and>
+					</and>
+					<and name="commandParameterType">
+						<feature mandatory="true" name="id_9"/>
+						<feature name="type"/>
+						<feature name="converter"/>
+					</and>
+				</and>
+				<and name="Menus">
+					<and name="menuContribution">
+						<feature mandatory="true" name="locationURI"/>
+						<feature name="class_6"/>
+						<feature name="allPopups"/>
+						<and name="command_2">
+							<feature name="parameter_2"/>
+						</and>
+						<feature name="control"/>
+						<feature name="dynamic"/>
+						<and name="menu">
+							<feature mandatory="true" name="label_2"/>
+							<feature name="id_10"/>
+							<feature name="icon"/>
+							<feature name="tooltip"/>
+							<feature name="commandId_1"/>
+						</and>
+						<feature name="separator"/>
+						<feature name="toolbar"/>
+					</and>
+					<feature name="id_11"/>
+					<feature name="name_8"/>
+				</and>
+				<and name="EMFEcoreExtensionParser">
+					<feature name="id_12"/>
+					<feature name="name_9"/>
+					<and name="parser">
+						<feature mandatory="true" name="type_1"/>
+						<feature mandatory="true" name="class_7"/>
+					</and>
+				</and>
+				<and name="ExtensionResourceServiceProvider">
+					<and name="resourceServiceProvider">
+						<feature mandatory="true" name="uriExtension"/>
+						<feature mandatory="true" name="class_8"/>
+					</and>
+					<feature name="id_13"/>
+					<feature name="name_10"/>
+				</and>
+				<and name="IDEMarkerResolution">
+					<feature name="id_14"/>
+					<feature name="name_11"/>
+					<and name="markerResolutionGenerator">
+						<feature mandatory="true" name="class_9"/>
+						<feature name="markerType"/>
+					</and>
+				</and>
+				<and name="NewWizards">
+					<feature name="id_15"/>
+					<feature name="name_12"/>
+					<and name="category_2">
+						<feature mandatory="true" name="id_16"/>
+						<feature mandatory="true" name="name_13"/>
+						<feature name="parentCategory"/>
+					</and>
+					<and name="primaryWizard">
+						<feature mandatory="true" name="id_17"/>
+					</and>
+					<and name="wizard">
+						<feature mandatory="true" name="id_18"/>
+						<feature mandatory="true" name="name_14"/>
+						<feature mandatory="true" name="class_10"/>
+						<feature name="icon_1"/>
+						<feature name="category_3"/>
+						<feature name="project"/>
+						<feature name="finalPerspective"/>
+						<feature name="preferredPerspectives"/>
+						<feature name="helpHref"/>
+						<feature name="descriptionImage"/>
+						<feature name="canFinishEarly"/>
+						<feature name="hasPages"/>
+						<feature name="description_2"/>
+						<feature name="keywordReference"/>
+						<and name="selection">
+							<feature mandatory="true" name="class_11"/>
+							<feature name="name_15"/>
+						</and>
+					</and>
+				</and>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<disj>
+					<var>Handlers</var>
+					<not>
+						<var>Menus</var>
+					</not>
+				</disj>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
