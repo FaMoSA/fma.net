@@ -42,12 +42,15 @@ namespace Famosa.FMAnalyzer
         public List<FeatureRelationship> Relationships { get; set; }
         public List<Constraint> Constraints { get; set; }
 
+        public Dictionary<String, String> MetaData { get; set; }
+
         public FeatureModel()
         {
             this.Features = new List<Feature>();
             this.FeatureMap = new Dictionary<string, Feature>();
             this.Relationships = new List<FeatureRelationship>();
             this.Constraints = new List<Constraint>();
+            this.MetaData = new Dictionary<string, string>();
             this.Root = null;
         }
 
@@ -78,11 +81,14 @@ namespace Famosa.FMAnalyzer
 
         private void UpdateFeatureMap(Feature feature)
         {
-            if (this.FeatureMap.ContainsKey(feature.Name))
-                throw new InvalidOperationException("feature " + feature.Name + " is included two times");
+            if (feature.Id == null || feature.Id.Length == 0)
+                feature.Id = feature.Name;
+
+            if (this.FeatureMap.ContainsKey(feature.Id))
+                throw new InvalidOperationException("feature " + feature.Id + " is included two times");
 
             this.Features.Add(feature);
-            this.FeatureMap.Add(feature.Name, feature);
+            this.FeatureMap.Add(feature.Id, feature);
             foreach (Feature childFeature in feature.Children)
                 UpdateFeatureMap(childFeature);
         }
