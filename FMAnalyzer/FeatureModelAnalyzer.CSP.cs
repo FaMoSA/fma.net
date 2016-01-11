@@ -141,8 +141,8 @@ namespace Famosa.FMAnalyzer
             foreach (Feature f in this.model.Features)
             {
 
-                CspTerm constraint = converter2.convertFeature(f);
-                S2.AddConstraints(S.Not(constraint));
+                CspTerm constraint = S.Not(converter2.convertFeature(f));
+                S2.AddConstraints(constraint);
 
                 ConstraintSolverSolution sol2 = S2.Solve();
                 if (!sol2.HasFoundSolution)
